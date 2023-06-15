@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{ smartphone.model }} </h1>
+<img src="{{smartphone.url}}">
+<ul>
+    <li>Chipset: {{ smartphone.chipset }}</li>
+    <li>Main Camera: {{ smartphone.main_camera }}</li>
+    <li>Selfie Camera: {{ smartphone.selfie_camera }}</li>
+    <li>Internal_Memory: {{ smartphone.internal_memory }}</li>
+    <li>Battery: {{ smartphone.battery }}</li>
+    <li>Price: {{ smartphone.price }}</li>
+    <li>Condition: {{ smartphone.condition }}</li>
+    <li>Reason for Selling: {{ smartphone.reason_for_selling }}</li>
+</ul>
+<form action="{{ url_for('modify') }}" method="post">
+    <input type="hidden" name="smartphone_id" value="{{ smartphone.id }}">
+    <input class="btn btn-secondary" type="submit" name="modify" value="edit"></input>
+    <input class="btn btn-danger" type="submit" name="modify" value="delete"></input>
+</form>
+{% endblock %}

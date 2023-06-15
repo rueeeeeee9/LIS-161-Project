@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Post your preloved smartphones here for potential buyers!</h1>
+<form action="{{ url_for('processing') }}" method="post">
+    <label for="p_brand">Smartphone Brand:</label>
+    <select name="brand" id="p_brand" required>
+        <option disabled selected value>...</option>
+        <option value="Apple">Apple</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Xiaomi">Xiaomi</option>
+    </select><br><br>
+    <label for="p_model">Model:</label>
+    <input type="text" name="brand_model" id="p_model" required><br><br>
+    <label for="p_chipset">Chipset:</label>
+    <input type="text" name="brand_chipset" id="p_chipset"><br><br>
+    <label for="p_main_camera">Main Camera:</label>
+    <input type="text" name="brand_main_camera" id="p_main_camera"><br><br>
+    <label for="p_selfie_camera">Selfie Camera:</label>
+    <input type="text" name="brand_selfie_camera" id="p_selfie_camera"><br><br>
+    <label for="p_internal_memory">Internal Memory:</label>
+    <input type="text" name="brand_internal_memory" id="p_internal_memory"><br><br>
+    <label for="p_battery">Battery:</label>
+    <input type="text" name="brand_battery" id="p_battery"><br><br>
+    <label for="p_color">Color:</label>
+    <input type="text" name="brand_color" id="p_color"><br><br>
+    <label for="p_price">Price:</label>
+    <input type="number" name="brand_price" id="p_price"><br><br>
+    <label for="p_condition">Condition:</label>
+    <textarea name="brand_condition" id="p_condition" placeholder="What is the condition of your smartphone?" cols="30" rows="10"></textarea><br><br>
+    <label for="p_reason_for_selling">Reason For Selling:</label>
+    <textarea name="brand_reason_for_selling" id="p_reason_for_selling" placeholder="Why do you want to sell this?" cols="30" rows="10"></textarea><br><br>
+    <label for="p_url">Image URL:</label>
+    <input type="url" name="brand_url" id="p_url"><br><br>
+    <input type="submit" value="Register!">
+</form>
+{% endblock %}

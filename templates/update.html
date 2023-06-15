@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Edit phone details</h1>
+    <form action="{{ url_for('update') }}" method="post">
+        <input type="hidden" name="smartphone_id" value="{{ smartphone.id }}">
+        <label for="p_name">Brand:</label>
+        <input type="text" name="smartphone_brand" id="p_name" value="{{ smartphone.brand }}" required><br><br>
+        <label for="p_model">Model:</label>
+        <input type="text" name="smartphone_model" id="p_model" value="{{ smartphone.model }}"><br><br>
+        <label for="p_chipset">Chipset:</label>
+        <input type="text" name="smartphone_chipset" id="p_chipset" value="{{ smartphone.chipset }}"><br><br>
+        <label for="p_main_camera">Main Camera:</label>
+        <input type="text" name="smartphone_main_camera" id="p_main_camera" value="{{ smartphone.main_camera }}"><br><br>
+        <label for="p_selfie_camera">Selfie Camera:</label>
+        <input type="text" name="smartphone_selfie_camera" id="p_selfie_camera" value="{{ smartphone.selfie_camera }}"><br><br>
+        <label for="p_internal_memory">Internal Memory:</label>
+        <input type="text" name="smartphone_internal_memory" id="p_internal_memory" value="{{ smartphone.internal_memory }}"><br><br>
+        <label for="p_battery">Battery:</label>
+        <input type="text" name="smartphone_battery" id="p_battery" value="{{ smartphone.battery }}"><br><br>
+        <label for="p_color">Color:</label>
+        <input type="text" name="smartphone_color" id="p_color" value="{{ smartphone.color }}"><br><br>
+        <label for="p_price">Price:</label>
+        <input type="number" name="smartphone_price" id="p_price" value="{{ smartphone.price }}"><br><br>
+        <label for="p_condition">Condition:</label>
+        <input type="text" name="smartphone_condition" id="p_condition" value="{{ smartphone.condition }}"><br><br>
+        <label for="p_reason_for_selling">Reason For Selling:</label>
+        <textarea name="smartphone_reason_for_selling" cols="30" rows="10">{{ smartphone.reason_for_selling }}</textarea><br><br>
+        <label for="p_url">URL:</label>
+        <input type="url" name="smartphone_url" id="p_url" value="{{ smartphone.url }}"><br><br>
+        <input type="submit" value="Update!">
+    </form>
+{% endblock %}

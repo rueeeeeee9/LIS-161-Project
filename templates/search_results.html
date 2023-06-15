@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Search Results for "{{ query }}"</h1>
+  {% if results %}
+    <ul>
+      {% for smartphone in results %}
+        <li>
+          <h2>{{ smartphone.brand }} - {{ smartphone.model }}</h2>
+          <img src="{{ smartphone.url }}" alt="{{ smartphone.brand }} {{ smartphone.model }}">
+          <p>Chipset: {{ smartphone.chipset }}</p>
+          <p>Main Camera: {{ smartphone.main_camera }}</p>
+          <p>Selfie Camera: {{ smartphone.selfie_camera }}</p>
+          <p>Internal Memory: {{ smartphone.internal_memory }}</p>
+          <p>Battery: {{ smartphone.battery }}</p>
+          <p>Color: {{ smartphone.color }}</p>
+          <p>Price: {{ smartphone.price }}</p>
+          <p>Condition: {{ smartphone.condition }}</p>
+          <p>Reason for Selling: {{ smartphone.reason_for_selling }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No results found.</p>
+  {% endif %}
+{% endblock %}

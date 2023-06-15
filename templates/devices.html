@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>List of {{ brand }}</h1>
+<ul>
+    {% for smartphone in smartphones %}
+    <li><a href="/devices/{{ smartphone.id }}">{{ smartphone.model }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
