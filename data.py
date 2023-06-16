@@ -53,7 +53,7 @@ def update_smartphone(smartphone_data):
 def delete_smartphone(smartphone_id):
     conn, cur = connect_to_db(db_path)
     query = "DELETE FROM smartphones WHERE id = ?"
-    values = (smartphone_id)
+    values = (smartphone_id,)
     cur.execute(query, values)
     conn.commit()
     conn.close()
