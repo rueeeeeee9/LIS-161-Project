@@ -50,7 +50,7 @@ def modify():
     smartphone_id =request.form["smartphone_id"]
     smartphone = read_smartphone_by_id(smartphone_id)
     delete_smartphone(smartphone_id)
-    return redirect(url_for("devices", smartphone['brand']))
+    return redirect(url_for("devices", brand=smartphone['brand']))
 
 @app.route('/update', methods=['post'])
 def update():
